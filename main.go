@@ -302,6 +302,7 @@ func main() {
 
 	stopCh := make(chan struct{})
 	kubeInformerFactory.Start(stopCh)
+	r.ChaosControllerInstance = controller
 
 	go r.ReportMetrics()
 
